@@ -4,7 +4,8 @@
   "description": "",
   "main": "",
   "scripts": {
-    "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5050"
+    "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5050",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
