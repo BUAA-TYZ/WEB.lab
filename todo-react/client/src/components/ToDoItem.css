@@ -1,0 +1,22 @@
+:root {
+  --x: 8px;
+  --x2: 16px;
+  --fontSize: 32px;
+}
+
+.ToDoItem-Item {
+  font-size: var(--fontSize);
+  padding: var(--x2);
+}
+
+.ToDoItem-del {
+  font-weight: 300;
+  font-size: var(--fontSize);
+  filter: blur(0.5px);
+}
+
+.ToDoItem-ItemContent {
+  font-size: var(--fontSize);
+  font-weight: 600;
+  padding: var(--x);
+}
