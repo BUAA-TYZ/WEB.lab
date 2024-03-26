@@ -33,6 +33,7 @@ const Feed = (props) => {
         creator_name={storyObj.creator_name}
         creator_id={storyObj.creator_id}
         content={storyObj.content}
+        userId={props.userId}
       />
     ));
   } else {

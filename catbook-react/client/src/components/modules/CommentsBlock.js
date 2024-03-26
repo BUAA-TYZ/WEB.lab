@@ -28,7 +28,9 @@ const CommentsBlock = (props) => {
             content={comment.content}
           />
         ))}
-        <NewComment storyId={props.story._id} addNewComment={props.addNewComment} />
+        {props.userId && (
+          <NewComment storyId={props.story._id} addNewComment={props.addNewComment} />
+        )}
       </div>
     </div>
   );

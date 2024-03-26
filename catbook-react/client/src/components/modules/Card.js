@@ -36,7 +36,12 @@ const Card = (props) => {
         creator_name={props.creator_name}
         content={props.content}
       />
-      <CommentsBlock story={props} comments={comments} addNewComment={addNewComment} />
+      <CommentsBlock
+        story={props}
+        comments={comments}
+        addNewComment={addNewComment}
+        userId={props.userId}
+      />
     </div>
   );
 };
