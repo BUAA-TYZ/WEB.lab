@@ -15,8 +15,15 @@ const Profile = (props) => {
   useEffect(() => {
     get("/api/user", { userid: props.userId }).then((user) => {
       setUser(user);
+      setCatHappiness(Number(user.happiness));
     });
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      post("/api/upuser", { happiness: catHappiness.toString() });
+    }
+  }, [catHappiness]);
 
   const incrementCatHappiness = () => {
     setCatHappiness(catHappiness + 1);

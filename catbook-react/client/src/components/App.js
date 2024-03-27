@@ -58,7 +58,7 @@ const App = () => {
       <div className="App-container">
         <Router>
           <Feed path="/" userId={userId} />
-          <Profile path="/profile/:userId" />
+          <Profile path="/profile/:userId" userId={userId} />
           <NotFound default />
         </Router>
       </div>

@@ -56,6 +56,18 @@ router.post("/comment", (req, res) => {
   newComment.save().then((comment) => res.send(comment));
 });
 
+router.post("/upuser", (req, res) => {
+  User.findByIdAndUpdate(req.user._id, { happiness: req.body.happiness })
+    .then((updatedDoc) => {
+      console.log(req.body.happiness);
+      console.log("Document updated successfully:", updatedDoc);
+      res.send(updatedDoc);
+    })
+    .catch((error) => {
+      console.error("Error updating document:", error);
+    });
+});
+
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
 
