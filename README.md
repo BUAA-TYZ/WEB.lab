@@ -254,6 +254,8 @@ myFunc();
 
 - Use render
 - However, render needs a US card. So skip.
+- [npm run build](https://juejin.cn/s/npm%20run%20build%E6%98%AF%E4%BB%80%E4%B9%88)
+  - Generate `bundle.js`
 
 ## Workshop
 
@@ -358,6 +360,24 @@ app.use("/api", api);
 process.env.http_proxy = "http://127.0.0.1:7890";
 process.env.HTTPS_PROXY = "http://127.0.0.1:7890";
 ```
+
+- Two ways to hide the variable
+  1. Use `config.js` in the frone-end
+  2. Use `dotenv` in the back-end
+- When remembering the catHappiness, meet many pitfalls.
+  1. When writing post api, **must send a res back.** Otherwise the front-end will stuck.
+  - Front-end will wait for a long time.
+  2. When updating the variable, using `mogoose.findByIdAndUpdate()`.
+  - Note that it returns a query. So we should use `exec()` or `then()` to trigger it.
+- How to handle a special case: the user logout at the profile page?
+  - Don't change the front-end code which means we can still change happiness.
+  - However, the back-end only write to DB when `req.user != null`.
+  - Can we use props.userId to prevent user from changing happiness?
+    - No. setState is async.
+  - What's more, **add a link to send the user back at home after logout**.
+- Write some css to beautify the logout button.
+
+####
 
 ## HW
 
