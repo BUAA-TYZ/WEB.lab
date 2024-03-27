@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "@reach/router";
 import { GoogleLogin } from "@react-oauth/google";
 
-import { get, post } from "../../utilities";
+import { Router } from "@reach/router";
 import "./NavBar.css";
 
 /**
@@ -22,9 +22,11 @@ const NavBar = (props) => {
           </Link>
         )}
         {props.userId ? (
-          <button onClick={props.handleLogout} className="NavBar-link NavBar-login">
-            Logout
-          </button>
+          <Link to="/" className="NavBar-link NavBar-login">
+            <button onClick={props.handleLogout} path="/" className="NavBar-logout">
+              Logout
+            </button>
+          </Link>
         ) : (
           <GoogleLogin
             onSuccess={props.handleLogin}
